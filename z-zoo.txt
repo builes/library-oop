@@ -1,0 +1,81 @@
+**Enunciado Avanzado: Sistema de Zoológico Complejo con POO en Python**
+
+Bienvenido al desafío avanzado de programación orientada a objetos en Python. Vamos a crear un sistema de gestión extremadamente completo para un zoológico aplicando todos los conceptos mencionados, incluyendo herencia, polimorfismo, encapsulamiento, abstracción, clases abstractas, métodos abstractos, sobreescritura de métodos, métodos de clase, atributos de clase, métodos estáticos, al menos una clase decoradora, métodos mágicos (mínimo 7), y el método especial `__setattr__`. Además, simularemos varios constructores utilizando argumentos con valores predeterminados.
+
+### Clases Principales:
+
+1. **Zoo:**
+   - Atributos de clase: 
+      - `zoo_count` (contará la cantidad total de zoológicos).
+      - `capacidad_maxima` (atributo de clase que establece la capacidad máxima del zoológico).
+   - Métodos de clase: 
+      - `obtener_cantidad_zoos()`: devuelve la cantidad total de zoológicos.
+      - `obtener_capacidad_maxima()`: devuelve la capacidad máxima del zoológico.
+   - Métodos mágicos: 
+      - `__str__`: proporciona una representación de cadena detallada del zoológico.
+      - `__repr__`: proporciona una representación técnica de la instancia.
+      - `__setattr__`: registra cada vez que se establece un atributo.
+   - Composición: Contendrá instancias de Jaula.
+
+2. **Animal (clase abstracta):**
+   - Atributos protegidos: `__nombre`, `__edad`.
+   - Métodos abstractos: `hablar()`, `envejecer()`.
+   - Métodos de clase: 
+      - `crear_animal_por_edad(cls, nombre, edad)`: método que crea una instancia de animal con una edad específica.
+   - Métodos mágicos: 
+      - `__str__`: proporciona una representación de cadena detallada del animal.
+      - `__repr__`: proporciona una representación técnica de la instancia.
+      - `__setattr__`: intercepta y modifica el comportamiento de la asignación de atributos.
+
+### Clases Específicas:
+
+3. **Ave (hereda de Animal):**
+   - Atributo adicional: `tipo_plumaje`.
+   - Método sobreescrito: `hablar()`.
+
+4. **Mamífero (hereda de Animal):**
+   - Atributo adicional: `numero_patas`.
+   - Método sobreescrito: `envejecer()`.
+
+5. **Reptil (hereda de Animal):**
+   - Atributo adicional: `venenoso` (booleano).
+   - Método: `es_venenoso()`.
+
+### Clases de Composición:
+
+6. **Jaula:**
+   - Atributos de clase: 
+      - `jaula_count` (contará la cantidad total de jaulas).
+      - `capacidad_maxima` (atributo de clase que establece la capacidad máxima de la jaula).
+   - Métodos de clase: 
+      - `obtener_cantidad_jaulas()`: devuelve la cantidad total de jaulas.
+      - `obtener_capacidad_maxima()`: devuelve la capacidad máxima de la jaula.
+   - Métodos mágicos: 
+      - `__str__`: proporciona una representación de cadena detallada de la jaula.
+      - `__repr__`: proporciona una representación técnica de la instancia.
+      - `__setattr__`: registra cada vez que se establece un atributo.
+   - Composición: Contendrá instancias de Animal.
+
+### Métodos Avanzados:
+
+7. **Tigre (hereda de Mamífero):**
+   - Atributo adicional: `rayas_color`.
+   - Métodos estáticos: 
+      - `generar_numero_tigres(cls)`: método estático que genera un número aleatorio de tigres.
+   - Métodos de clase: 
+      - `obtener_tigres_con_color(cls, color)`: método de clase que devuelve todos los tigres con un color específico.
+
+### Decorador:
+
+8. **Decorador: `RegistroZoo`**
+   - Decorador que registra cada vez que se agrega o elimina un animal del zoológico.
+
+### Métodos Mágicos Adicionales:
+
+9. **Métodos Mágicos Adicionales:**
+   - `__len__` en Jaula.
+   - `__eq__` en Mamífero.
+   - `__lt__` en Animal.
+   - `__call__` en Animal y Jaula: permite llamar a la instancia como una función, mostrando información relevante.
+
+Este enunciado brinda un desafío extremadamente completo y avanzado para explorar todos los conceptos de POO en Python. ¡Aprovecha al máximo la oportunidad de experimentar y construir un sistema de zoológico robusto e interactivo! ¡Buena suerte!
